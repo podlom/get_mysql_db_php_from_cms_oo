@@ -16,14 +16,7 @@ class detectManager
     private $dirName = null;
     private $commentStart = '';
     private $commentEnd = '';
-    private $cmsConfigs = [
-        'getMysqlCms\\wordpressCms' => DIRECTORY_SEPARATOR . 'wp-config.php',
-        'getMysqlCms\\drupalCmf' => DIRECTORY_SEPARATOR . 'sites' . DIRECTORY_SEPARATOR . 'default' . DIRECTORY_SEPARATOR . 'settings.php',
-        'getMysqlCms\\yii2FrameworkBasic' => DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'db.php',
-        'getMysqlCms\\yii2FrameworkAdvanced' => DIRECTORY_SEPARATOR . 'common' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'main-local.php',
-        'getMysqlCms\\joomlaCms' => DIRECTORY_SEPARATOR . 'configuration.php',
-        'getMysqlCms\\magentoCms' => DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'etc' . DIRECTORY_SEPARATOR . 'local.xml',
-    ];
+    private $cmsConfigs = [];
     private $dbs = [];
     private $reportText = '';
     private $disPlayResults = 0;
@@ -35,6 +28,7 @@ class detectManager
         }
         $this->commentStart = $commentStart;
         $this->commentEnd = $commentEnd;
+        $this->initCmsConfigs();
         $this->detectCms();
     }
 
@@ -73,5 +67,17 @@ class detectManager
         } else {
             $this->reportText .= __METHOD__ . ' +' . __LINE__ . ' CMS was not detected!' . PHP_EOL;
         }
+    }
+    
+    private function initCmsConfigs()
+    {
+        $this->cmsConfigs = [
+            'getMysqlCms\\wordpressCms' => DIRECTORY_SEPARATOR . 'wp-config.php',
+            'getMysqlCms\\drupalCmf' => DIRECTORY_SEPARATOR . 'sites' . DIRECTORY_SEPARATOR . 'default' . DIRECTORY_SEPARATOR . 'settings.php',
+            'getMysqlCms\\yii2FrameworkBasic' => DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'db.php',
+            'getMysqlCms\\yii2FrameworkAdvanced' => DIRECTORY_SEPARATOR . 'common' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'main-local.php',
+            'getMysqlCms\\joomlaCms' => DIRECTORY_SEPARATOR . 'configuration.php',
+            'getMysqlCms\\magentoCms' => DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'etc' . DIRECTORY_SEPARATOR . 'local.xml',
+        ];
     }
 }
