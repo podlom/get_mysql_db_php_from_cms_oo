@@ -51,12 +51,12 @@ class detectManager
     {
         foreach ($this->cmsConfigs as $c1 => $v1) {
             $configFileName = $this->dirName . $v1;
-            $this->reportText .= __METHOD__ . ' +' . __LINE__ . ' Checking ' . $configFileName . '...' . PHP_EOL;
+            $this->reportText .= $this->commentStart . ' ' . __METHOD__ . ' +' . __LINE__ . ' Checking ' . $configFileName . '...' . ' ' . $this->commentEnd;
             if (file_exists($configFileName)) {
                 $cms = new $c1($this->dirName, $this->commentStart, $this->commentEnd);
                 break;
             } else {
-                $this->reportText .= __METHOD__ . ' +' . __LINE__ . ' File ' . $configFileName . ' was not found.' . PHP_EOL;
+                $this->reportText .= $this->commentStart . ' ' . __METHOD__ . ' +' . __LINE__ . ' File ' . $configFileName . ' was not found.' . ' ' . $this->commentEnd;
             }
         }
         if (!empty($cms)) {
@@ -65,7 +65,7 @@ class detectManager
             $this->reportText .= $cms->getReportText();
             $this->disPlayResults = $cms->displayResults();
         } else {
-            $this->reportText .= __METHOD__ . ' +' . __LINE__ . ' CMS was not detected!' . PHP_EOL;
+            $this->reportText .= $this->commentStart . ' ' . __METHOD__ . ' +' . __LINE__ . ' CMS was not detected!' . ' ' . $this->commentEnd;
         }
     }
     
