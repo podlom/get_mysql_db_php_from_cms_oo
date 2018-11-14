@@ -17,12 +17,12 @@ class detectManager
     private $commentStart = '';
     private $commentEnd = '';
     private $cmsConfigs = [
-        'getMysqlCms\\wordpressCms' => 'wp-config.php',
-        'getMysqlCms\\drupalCmf' => 'sites' . DIRECTORY_SEPARATOR . 'default' . DIRECTORY_SEPARATOR . 'settings.php',
-        'getMysqlCms\\yii2FrameworkBasic' => 'config' . DIRECTORY_SEPARATOR . 'db.php',
-        'getMysqlCms\\yii2FrameworkAdvanced' => 'common' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'main-local.php',
-        'getMysqlCms\\joomlaCms' => 'configuration.php',
-        'getMysqlCms\\magentoCms' => 'app' . DIRECTORY_SEPARATOR . 'etc' . DIRECTORY_SEPARATOR . 'local.xml',
+        'getMysqlCms\\wordpressCms' => DIRECTORY_SEPARATOR . 'wp-config.php',
+        'getMysqlCms\\drupalCmf' => DIRECTORY_SEPARATOR . 'sites' . DIRECTORY_SEPARATOR . 'default' . DIRECTORY_SEPARATOR . 'settings.php',
+        'getMysqlCms\\yii2FrameworkBasic' => DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'db.php',
+        'getMysqlCms\\yii2FrameworkAdvanced' => DIRECTORY_SEPARATOR . 'common' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'main-local.php',
+        'getMysqlCms\\joomlaCms' => DIRECTORY_SEPARATOR . 'configuration.php',
+        'getMysqlCms\\magentoCms' => DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'etc' . DIRECTORY_SEPARATOR . 'local.xml',
     ];
     private $dbs = [];
     private $reportText = '';
