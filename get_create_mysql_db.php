@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Detect popular CMS MySQL database settings and output .my.cnf
+ * Detect MySQL database settings and output set up DB and User script
  *
  * PHP version 5.4+
  *
  * @category PHP_CLI_Scripts
- * @package  Get Сreate my.cnf MySQL configuration file
+ * @package  Get Сreate MySQL user and database script
  * @author   Taras Shkodenko <taras@shkodenko.com>
  * @license  GNU GENERAL PUBLIC LICENSE Version 2
  * @link     http://www.shkodenko.com/
