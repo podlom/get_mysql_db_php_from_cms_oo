@@ -1,0 +1,19 @@
+{
+    "name": "podlom/get_mysql_db_php_from_cms_oo",
+    "type": "library",
+    "description": "Get_MySQL_DB_PHP_From_CMS_OO is a set of PHP cli scripts which aimed to help web developers to set up popular PHP CMS quickly.",
+    "keywords": ["MySQL", "PHP", "CMS", "get MySQL DB settings from PHP CMS"],
+    "homepage": "https://github.com/podlom/get_mysql_db_php_from_cms_oo",
+    "license": "GPL v.2",
+    "authors": [
+        {
+            "name": "Taras Shkodenko",
+            "email": "taras@shkodenko.com",
+            "homepage": "http://www.shkodenko.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.0.0"
+    }
+}
