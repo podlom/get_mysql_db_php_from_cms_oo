@@ -25,10 +25,10 @@ class drupalCmf extends baseCms
     public function detectCMS()
     {
         include_once $this->configFile;
-        echo $this->commentStart . ' Loaded default config file ' . $this->configFile . ' ' . $this->commentEnd . PHP_EOL;
+        $this->reportText .= $this->commentStart . ' Loaded default config file ' . $this->configFile . ' ' . $this->commentEnd . PHP_EOL;
         if (isset($db_url)) {
             // Drupal 6 ?
-            echo $this->commentStart . ' Detected Drupal 6 ' . $this->commentEnd . PHP_EOL;
+            $this->reportText .= $this->commentStart . ' Detected Drupal 6 ' . $this->commentEnd . PHP_EOL;
             $ap1 = parse_url($db_url);
             $this->dbs[0]['host'] = $ap1['host'];
             $this->dbs[0]['name'] = substr($ap1['path'], 1);
@@ -42,7 +42,7 @@ class drupalCmf extends baseCms
         } else {
             if (isset($databases)) {
                 // Drupal 7+ ?
-                echo $this->commentStart . ' Detected Drupal 7+ ' . ' ' . $this->commentEnd . PHP_EOL;
+                $this->reportText .= $this->commentStart . ' Detected Drupal 7+ ' . ' ' . $this->commentEnd . PHP_EOL;
                 if (count($databases > 0)) {
                     $i = 0;
                     foreach ($databases as $aDb) {
@@ -61,14 +61,14 @@ class drupalCmf extends baseCms
                 $multisiteConfig = $this->dirName . DIRECTORY_SEPARATOR . 'sites' . DIRECTORY_SEPARATOR . 'sites.php';
                 if (file_exists($multisiteConfig)) {
                     include_once $multisiteConfig;
-                    echo $this->commentStart . ' Loaded Drupal multisite config file ' . $multisiteConfig . ' ' . $this->commentEnd . PHP_EOL;
+                    $this->reportText .= $this->commentStart . ' Loaded Drupal multisite config file ' . $multisiteConfig . ' ' . $this->commentEnd . PHP_EOL;
                     if (isset($sites) && is_array($sites) && (count($sites) > 0)) {
                         $j = 0;
                         foreach ($sites as $domain => $configFolder) {
                             $configFile = $this->dirName . DIRECTORY_SEPARATOR . 'sites' . DIRECTORY_SEPARATOR . $configFolder . DIRECTORY_SEPARATOR . 'settings.php';
                             if (file_exists($configFile)) {
                                 include_once $configFile;
-                                echo $this->commentStart . ' Loaded config file ' . $configFile . ' for (sub)domain ' . $domain . ' ' . $this->commentEnd . PHP_EOL;
+                                $this->reportText .= $this->commentStart . ' Loaded config file ' . $configFile . ' for (sub)domain ' . $domain . ' ' . $this->commentEnd . PHP_EOL;
                                 if (count($databases > 0)) {
                                     foreach ($databases as $aDb) {
                                         if (($this->dbs[0]['host'] !== $aDb['default']['host'])
@@ -82,16 +82,16 @@ class drupalCmf extends baseCms
                                             $this->dbs[$j]['user'] = $aDb['default']['username'];
                                             $this->dbs[$j]['pass'] = $aDb['default']['password'];
                                         } else {
-                                            echo $this->commentStart . ' Skipped db settings because the same already exists. ' . $this->commentEnd . PHP_EOL;
+                                            $this->reportText .= $this->commentStart . ' Skipped db settings because the same already exists. ' . $this->commentEnd . PHP_EOL;
                                         }
                                     }
                                 } else {
-                                    echo $this->commentStart . ' Databases: ' . var_export($databases, 1) . ' ' . $this->commentEnd . PHP_EOL;
+                                    $this->reportText .= $this->commentStart . ' Databases: ' . var_export($databases, 1) . ' ' . $this->commentEnd . PHP_EOL;
                                 }
                             }
                         }
                     } else {
-                        echo $this->commentStart . ' Problems with reading multisite configuration ' . $this->commentEnd . PHP_EOL;
+                        $this->reportText .= $this->commentStart . ' Problems with reading multisite configuration ' . $this->commentEnd . PHP_EOL;
                     }
                 }
                 if (strlen($this->dbs[0]['name']) > 0

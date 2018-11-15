@@ -25,8 +25,7 @@ class yii2FrameworkAdvanced extends baseCms
     public function detectCMS()
     {
         // $msg = $this->commentStart . ' Yii 2+ Framework advanced application template DB config: ' . $this->configFile . ' ' . $this->commentEnd . PHP_EOL;
-        $msg = $this->commentStart . ' Yii 2+ Framework advanced application template ' . $this->commentEnd;
-        $this->addToReport($msg);
+        $this->reportText .= $this->commentStart . ' Yii 2+ Framework advanced application template ' . $this->commentEnd;
         $dbParams = require $this->configFile;
         if (isset($dbParams['components']['db']['dsn'])) {
             $p1 = explode(':', $dbParams['components']['db']['dsn']);
@@ -55,7 +54,7 @@ class yii2FrameworkAdvanced extends baseCms
                     }
                 }
             } else {
-                $this->addToReport($this->commentStart . ' Error: can`t generate script for non-MySQL database: ' . $p1[0] . ' ' . $this->commentEnd . PHP_EOL);
+                $this->reportText .= $this->commentStart . ' Error: can`t generate script for non-MySQL database: ' . $p1[0] . ' ' . $this->commentEnd . PHP_EOL;
             }
         }
     }

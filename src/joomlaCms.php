@@ -26,7 +26,7 @@ class joomlaCms extends baseCms
     {
         include_once $this->configFile;
         $jc1 = new JConfig;
-        echo $this->commentStart . ' Detected Joomla! CMS ' . trim($this->getVersionText() . ' ') . $this->commentEnd . PHP_EOL;
+        $this->reportText .= $this->commentStart . ' Detected Joomla! CMS ' . trim($this->getVersionText() . ' ') . $this->commentEnd . PHP_EOL;
         $this->dbs[0]['host'] = $jc1->host;
         $this->dbs[0]['name'] = $jc1->db;
         $this->dbs[0]['user'] = $jc1->user;

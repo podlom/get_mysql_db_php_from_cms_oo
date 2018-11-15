@@ -53,11 +53,6 @@ abstract class baseCms implements detectableInterface
         $this->dirName = $dirName;
     }
 
-    public function addToReport($text)
-    {
-        $this->reportText .= $text;
-    }
-
     public function getReportText()
     {
         return $this->reportText;

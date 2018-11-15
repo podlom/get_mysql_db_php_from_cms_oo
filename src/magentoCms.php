@@ -25,9 +25,12 @@ class magentoCms extends baseCms
     public function detectCMS()
     {
         if (!function_exists('simplexml_load_file')) {
-            echo 'Error: can`t work without simplexml_load_file function.' .
-                ' Please install SimpleXml support in PHP.' . PHP_EOL;
-            return 4;
+            $this->reportText .= $this->commentStart . 'Error: can`t work without simplexml_load_file function.' .
+                ' Please install SimpleXml support in PHP.' . $this->commentEnd . PHP_EOL;
+            //
+            // TODO: implement return code
+            // return 4;
+            //
         }
         $xmlConfig = simplexml_load_file($this->configFile);
         $conn = $xmlConfig->global->resources->default_setup->connection;
