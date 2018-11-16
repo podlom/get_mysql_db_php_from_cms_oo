@@ -2,9 +2,15 @@
 
 Possible usage for: DevOps automation, backups sripting and much more.
 
-Get create MySQL database(s) & user(s) SQL script from popular CMS such as Wordpress, Drupal, Joomla!, Magento, Yii2 Framework both advanced & basic application templates.
+Get create MySQL database(s) & user(s) SQL script from popular CMS such as Wordpress, Drupal, Joomla!, Magento, Laravel & Yii2 Frameworks.
+Yii2 Framework config detection works for both advanced & basic application templates.
 
 Please, let me know If you want to add some more missing CMS and Frameworks written on PHP.
+
+Installation:
+```
+$ composer install
+```
 
 Usage:
 ```

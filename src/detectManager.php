@@ -78,6 +78,7 @@ class detectManager
             'getMysqlCms\\yii2FrameworkAdvanced' => DIRECTORY_SEPARATOR . 'common' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'main-local.php',
             'getMysqlCms\\joomlaCms' => DIRECTORY_SEPARATOR . 'configuration.php',
             'getMysqlCms\\magentoCms' => DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'etc' . DIRECTORY_SEPARATOR . 'local.xml',
+            'getMysqlCms\\laravelFramework' => DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'database.php',
         ];
     }
 }

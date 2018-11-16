@@ -10,6 +10,9 @@
 
 namespace getMysqlCms;
 
+if (file_exists(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php')) {
+    require_once realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
+}
 
 spl_autoload_register(function ($className) {
     // echo __FUNCTION__ . ' +' . __LINE__ . ' class name: ' . var_export($className, 1) . PHP_EOL;
