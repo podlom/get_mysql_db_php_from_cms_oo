@@ -11,6 +11,10 @@
 namespace getMysqlCms;
 
 
+/**
+ * Interface detectableInterface
+ * @package getMysqlCms
+ */
 interface detectableInterface {
     function detectCMS();
     function detectSetVersion();

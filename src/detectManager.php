@@ -11,6 +11,10 @@
 namespace getMysqlCms;
 
 
+/**
+ * Class detectManager
+ * @package getMysqlCms
+ */
 class detectManager
 {
     private $dirName = null;
