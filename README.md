@@ -7,7 +7,7 @@ Yii2 Framework config detection works for both advanced & basic application temp
 
 Please, let me know If you want to add some more missing CMS and Frameworks written on PHP.
 
-Installation:
+In case if you want to detect Laravel vendor libs istallation:
 ```
 $ composer install
 ```
