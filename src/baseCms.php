@@ -76,6 +76,7 @@ abstract class baseCms implements detectableInterface
     }
 
     /**
+     * Getter for @var $this->dbs
      * @return array DBs getter
      */
     public function getDbs()
@@ -84,6 +85,7 @@ abstract class baseCms implements detectableInterface
     }
 
     /**
+     * Getter for @var $this->version
      * @return string|null CMS version getter
      */
     public function getVersion()
@@ -92,6 +94,7 @@ abstract class baseCms implements detectableInterface
     }
 
     /**
+     * Getter for @var $this->versionText
      * @return string CMS version text getter
      */
     public function getVersionText()
@@ -100,6 +103,7 @@ abstract class baseCms implements detectableInterface
     }
 
     /**
+     * Setter for @var $this->dirName
      * @param $dirName string CMS directory name setter
      */
     public function setDirName($dirName)
@@ -108,6 +112,7 @@ abstract class baseCms implements detectableInterface
     }
 
     /**
+     * Getter for @var $this->reportText
      * @return string report text getter
      */
     public function getReportText()
@@ -116,6 +121,7 @@ abstract class baseCms implements detectableInterface
     }
 
     /**
+     * Getter for @var $this->disPlayResults
      * @return int display results getter
      */
     public function displayResults()

@@ -13,9 +13,19 @@ namespace getMysqlCms;
 
 /**
  * Interface detectableInterface
+ * every class which implements this interface
+ * should have such methods
+ *
  * @package getMysqlCms
  */
 interface detectableInterface {
+    /**
+     * @return mixed
+     */
     function detectCMS();
+
+    /**
+     * @return mixed
+     */
     function detectSetVersion();
 }
