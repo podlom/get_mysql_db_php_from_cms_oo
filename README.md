@@ -12,12 +12,14 @@ In case if you want to detect Laravel vendor libs istallation:
 $ composer install
 ```
 
+Get create MySQL database(s) & user(s) SQL queries.
+
 Usage:
 ```
 $ php get_create_mysql_db.php /home/taras/public_html
 ```
 
-Get drop MySQL database(s) & user(s) SQL script.
+Get drop MySQL database(s) & user(s) SQL queries.
 
 Usage:
 ```
