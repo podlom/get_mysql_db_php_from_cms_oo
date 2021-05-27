@@ -43,7 +43,7 @@ class drupalCmf extends baseCms
             if (isset($databases)) {
                 // Drupal 7+ ?
                 $this->reportText .= $this->commentStart . ' Detected Drupal 7+ ' . ' ' . $this->commentEnd . PHP_EOL;
-                if (count($databases > 0)) {
+                if (count($databases) > 0) {
                     $i = 0;
                     foreach ($databases as $aDb) {
                         $this->dbs[$i]['host'] = $aDb['default']['host'];
